@@ -81,7 +81,12 @@
         },
         "propertyId": {
             "type": "text",
-            "index": true
+            "index": true,
+            "fields": {
+                "exact": {
+                    "type": "keyword"
+                }
+            }
         },
         "valueType": {
             "type": "text"
