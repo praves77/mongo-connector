@@ -16,9 +16,9 @@
         "name": {
             "type": "text",
             "fields": {
-                "nostem": {
+                "edge_ngram_resource": {
                     "type": "text",
-                    "analyzer": "nonword",
+                    "analyzer": "autocomplete1",
                     "index_options": "docs"
                 },
                 "ngram_resource": {
@@ -26,9 +26,9 @@
                     "analyzer": "entity_name",
                     "index_options": "docs"
                 },
-                "edge_ngram_resource": {
+                "nostem": {
                     "type": "text",
-                    "analyzer": "autocomplete1",
+                    "analyzer": "nonword",
                     "index_options": "docs"
                 }
             }
@@ -36,9 +36,9 @@
         "typeName": {
             "type": "text",
             "fields": {
-                "nostem": {
+                "edge_ngram_resource": {
                     "type": "text",
-                    "analyzer": "nonword",
+                    "analyzer": "autocomplete1",
                     "index_options": "docs"
                 },
                 "ngram_resource": {
@@ -46,9 +46,9 @@
                     "analyzer": "entity_name",
                     "index_options": "docs"
                 },
-                "edge_ngram_resource": {
+                "nostem": {
                     "type": "text",
-                    "analyzer": "autocomplete1",
+                    "analyzer": "nonword",
                     "index_options": "docs"
                 }
             }
@@ -56,9 +56,9 @@
         "label": {
             "type": "text",
             "fields": {
-                "nostem": {
+                "edge_ngram_resource": {
                     "type": "text",
-                    "analyzer": "nonword",
+                    "analyzer": "autocomplete1",
                     "index_options": "docs"
                 },
                 "ngram_resource": {
@@ -66,9 +66,9 @@
                     "analyzer": "entity_name",
                     "index_options": "docs"
                 },
-                "edge_ngram_resource": {
+                "nostem": {
                     "type": "text",
-                    "analyzer": "autocomplete1",
+                    "analyzer": "nonword",
                     "index_options": "docs"
                 }
             }
