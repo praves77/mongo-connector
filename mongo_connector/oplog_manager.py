@@ -739,7 +739,7 @@ class OplogThread(threading.Thread):
                     # TODO: Docs to ingest ("attempting", no success/error callback)
 
                     dm.bulk_upsert(docs,
-                                   mapped_ns, long_ts, namespace, doc_options)
+                                   mapped_ns, long_ts, namespace)
                     # , 'extra arg for error')
 
                     docs_ingested_amount += total_docs
@@ -755,8 +755,8 @@ class OplogThread(threading.Thread):
                     LOG.always(total_docs)
                     LOG.always("_____________________________________________________________________________")
             except Exception as e:
-                err_msg = "CurDocNum = {}  - exception = {}".format(doc_options['curDocNum'], e)
-                LOG.exception("+++++ OplogThread: caught exception during bulk upsert/ re-upsert ",  err_msg)
+                # err_msg = "CurDocNum = {}  - exception = {}".format(doc_options['curDocNum'], e)
+                LOG.exception("+++++ OplogThread: caught exception during bulk upsert/ re-upsert ",  e)
 
                 if self.continue_on_error:
                     @self.ERROR_TIME.time()
