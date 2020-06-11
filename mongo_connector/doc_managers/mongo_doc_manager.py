@@ -202,8 +202,8 @@ class DocManager(DocManagerBase):
             upsert=True)
 
     @wrap_exceptions
-    def bulk_upsert(self, docs, namespace, timestamp):
-        def iterate_chunks():
+    def bulk_upsert(self, docs, namespace, timestamp, docOptions = {'curDocNum': 0}):
+        def iterate_chunks(docOptions={'curDocNum': 0}):
             dbname, collname = self._db_and_collection(namespace)
             collection = self.mongo[dbname][collname]
             meta_collection_name = self._get_meta_collection(namespace)
@@ -223,6 +223,7 @@ class DocManager(DocManagerBase):
                             'ns': namespace,
                             '_ts': timestamp
                         })
+                        docOptions['curDocNum'] += 1
                     except StopIteration:
                         more_chunks = False
                         if i > 0:
@@ -231,7 +232,7 @@ class DocManager(DocManagerBase):
                 if more_chunks:
                     yield bulk, bulk_meta
 
-        for bulk_op, meta_bulk_op in iterate_chunks():
+        for bulk_op, meta_bulk_op in iterate_chunks(docOptions):
             try:
                 bulk_op.execute()
                 meta_bulk_op.execute()
