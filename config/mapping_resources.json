@@ -33,8 +33,25 @@
                 }
             }
         },
-        "typeName": {
-            "type": "text"
+        "typeName" : {
+          "type" : "text",
+          "fields" : {
+            "edge_ngram_resource" : {
+              "type" : "text",
+              "index_options" : "docs",
+              "analyzer" : "autocomplete1"
+            },
+            "ngram_resource" : {
+              "type" : "text",
+              "index_options" : "docs",
+              "analyzer" : "entity_name"
+            },
+            "nostem" : {
+              "type" : "text",
+              "index_options" : "docs",
+              "analyzer" : "nonword"
+            }
+          }
         },
         "label": {
             "type": "text",
