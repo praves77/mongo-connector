@@ -729,7 +729,7 @@ class OplogThread(threading.Thread):
                     log_msg = '+++3  Getting mapped ns for {namespace}.'.format(namespace)
                     LOG.always(log_msg)
 
-                mapped_ns = self.namespace_config.map_namespace(
+                    mapped_ns = self.namespace_config.map_namespace(
                             namespace)
                     LOG.info("*+*+*+* Bulk upserting approximately %d docs from "
                              "collection '%s'",
