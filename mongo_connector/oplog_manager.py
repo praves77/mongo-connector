@@ -718,15 +718,15 @@ class OplogThread(threading.Thread):
 
             try:
                 for namespace in dump_set:
-                    log_msg = '+++1  Getting collection for {namespace}'.format(namespace)
+                    log_msg = '+++1  Getting collection for {}'.format(namespace)
                     LOG.always(log_msg)
                     from_coll = self.get_collection(namespace)
 
-                    log_msg = '+++2  Getting doc count for {namespace} collection with retry_until_ok .'.format(namespace)
+                    log_msg = '+++2  Getting doc count for {} collection with retry_until_ok .'.format(namespace)
                     LOG.always(log_msg)
                     total_docs = retry_until_ok(from_coll.count)
 
-                    log_msg = '+++3  Getting mapped ns for {namespace}.'.format(namespace)
+                    log_msg = '+++3  Getting mapped ns for {}.'.format(namespace)
                     LOG.always(log_msg)
 
                     mapped_ns = self.namespace_config.map_namespace(
