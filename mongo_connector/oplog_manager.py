@@ -752,7 +752,10 @@ class OplogThread(threading.Thread):
                     LOG.always("~")
                     LOG.always(total_docs)
                     LOG.always("_____________________________________________________________________________")
-            except Exception:
+            except Exception as e:
+                err_msg = '+++++ OplogThread: caught exception during bulk upsert: {}'.format(e)
+                LOG.exception(err_msg)
+
                 if self.continue_on_error:
                     @self.ERROR_TIME.time()
                     def process_exception(metric):
