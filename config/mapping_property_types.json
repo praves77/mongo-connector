@@ -9,7 +9,7 @@
                     "analyzer": "nonword",
                     "index_options": "docs"
                 },
-                "ngram_resource_type": {
+                "ngram_property_type": {
                     "type": "text",
                     "analyzer": "entity_name",
                     "index_options": "docs"
