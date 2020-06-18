@@ -47,33 +47,30 @@
             }
         },
         "source": {
-            "type": "text",
-            "index": true
+            "type": "text"
         },
         "created": {
-            "type": "date",
-            "index": true
+            "type": "date"
         },
         "modified": {
-            "type": "date",
-            "index": true
+            "type": "date"
         },
         "version": {
             "type": "text"
         },
         "immutable": {
-            "type": "boolean",
-            "index": true
+            "type": "boolean"
         },
         "deleted": {
-            "type": "boolean",
-            "index": true
+            "type": "boolean"
+        },
+        "public": {
+            "type": "boolean"
         },
         "accessibleTo": {
             "properties": {
                 "_id": {
-                    "type": "keyword",
-                    "index": true
+                    "type": "keyword"
                 }
             }
         }
