@@ -34,11 +34,6 @@
                     "analyzer": "nonword",
                     "index_options": "docs"
                 },
-                "ngram_resource_type": {
-                    "type": "text",
-                    "analyzer": "entity_name",
-                    "index_options": "docs"
-                },
                 "edge_ngram_resource_type": {
                     "type": "text",
                     "analyzer": "autocomplete1",
