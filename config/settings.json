@@ -62,7 +62,7 @@
 				"partial_match_tokenizer": {
 					"type": "ngram",
 					"min_gram": "3",
-					"max_gram": "30"
+					"max_gram": "10"
 				},
 				"my_whitespace_tokenizer": {
                     "type": "pattern",
