@@ -32,6 +32,9 @@ ADD scripts/start-mongo-connector.sh ./start-mongo-connector.sh
 #RUN pip install './mongo-connector[elastic5]'
 #RUN pip install -e ./elastic2-doc-manager[elastic5]
 
+# grant write permissions to /srv/riffyn/mongo-connector/oplogts/oplog.timestamp
+RUN chmod o+w /srv/riffyn/mongo-connector/oplogts/
+
 RUN useradd -u 8877 mongoc
 # Change to non-root privilege
 USER mongoc
