@@ -9,6 +9,11 @@
                     "analyzer": "nonword",
                     "index_options": "docs"
                 },
+                "ngram_property_type": {
+                    "type": "text",
+                    "analyzer": "entity_name",
+                    "index_options": "docs"
+                },
                 "edge_ngram_property_type": {
                     "type": "text",
                     "analyzer": "autocomplete1",
@@ -37,28 +42,30 @@
             }
         },
         "source": {
-            "type": "text",
-            "index": true
+            "type": "text"
         },
         "created": {
+            "type": "date"
+        },
+        "modified": {
             "type": "date"
         },
         "version": {
             "type": "text"
         },
         "immutable": {
-            "type": "boolean",
-            "index": true
+            "type": "boolean"
         },
         "deleted": {
-            "type": "boolean",
-            "index": true
+            "type": "boolean"
+        },
+        "public": {
+            "type": "boolean"
         },
         "accessibleTo": {
             "properties": {
                 "_id": {
-                    "type": "text",
-                    "index": true
+                    "type": "keyword"
                 }
             }
         }
